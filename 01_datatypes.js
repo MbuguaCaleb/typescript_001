@@ -48,3 +48,4 @@ let newNumberTwo = swapNumbs[1];
 let department;
 department = "IT";
 department = 10;
+//It is not adviseable to use the any datatype in production
