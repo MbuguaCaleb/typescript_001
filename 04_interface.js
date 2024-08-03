@@ -13,3 +13,73 @@ let employeeOne = {
     salary: 20000,
 };
 console.log(employeeOne);
+//Descrunturing an access of properties
+let userTwo = {
+    name: 'Caleb',
+    id: 1,
+    email: 'mbuguacaleb30@gmail.com',
+};
+//Traditional way, ait it is repetitive
+userTwo.name;
+userTwo.email;
+//Bette way to access properties via descrunctuting
+let { name, email } = {
+    name: 'Caleb',
+    id: 1,
+    email: 'mbuguacaleb30@gmail.com',
+};
+//Renaming propery after accessing it
+let { name: nameTwo, email: emailTwo } = {
+    name: 'Caleb',
+    id: 1,
+    email: 'mbuguacaleb30@gmail.com',
+};
+console.log(name, email);
+console.log(nameTwo, emailTwo);
+//Array desctructuring
+let users = [
+    {
+        name: 'Caleb',
+        id: 1,
+        email: 'mbuguacaleb30@gmail.com',
+    },
+    {
+        name: 'Mercy',
+        id: 2,
+        email: 'mbuguacaleb30@gmail.com',
+    },
+    {
+        name: 'Humphrey',
+        id: 3,
+        email: 'mbuguacaleb30@gmail.com',
+    },
+    {
+        name: 'Ruth',
+        id: 4,
+        email: 'mbuguacaleb30@gmail.com',
+    },
+];
+//i can get objects in array index via descructuring
+let [user1, user2] = [
+    {
+        name: 'Caleb',
+        id: 1,
+        email: 'mbuguacaleb30@gmail.com',
+    },
+    {
+        name: 'Mercy',
+        id: 2,
+        email: 'mbuguacaleb30@gmail.com',
+    },
+    {
+        name: 'Humphrey',
+        id: 3,
+        email: 'mbuguacaleb30@gmail.com',
+    },
+    {
+        name: 'Ruth',
+        id: 4,
+        email: 'mbuguacaleb30@gmail.com',
+    },
+];
+console.log(user1, user2);
