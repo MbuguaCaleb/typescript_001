@@ -38,7 +38,7 @@ console.log(add2(2, 3, 4, 5, 6, 7, 8));
 //Generics are more dynamic
 //we can have generic place holders. and whatever is returned will replace the generic place holder
 //When using generics we assign the return types dymanically.
-//
+// has a <> of the dymanic type after the name of the function
 function getItems(items) {
     return new Array().concat(items);
 }
