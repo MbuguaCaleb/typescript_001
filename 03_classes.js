@@ -11,6 +11,9 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _Employee_id;
+Object.defineProperty(exports, "__esModule", { value: true });
+//Exporting all exportable objects in a class
+// import * as UserLogIn from './04_interface';
 /**
  *
  * Proprties in a class are instantiated by constructors
@@ -22,12 +25,20 @@ var _Employee_id;
  *
  * Protected KeyWORD is important,when extending classes functionality
  */
+//Any class than implements the LogIn interface must have the LogIn Method
 class Employee {
     constructor(id, name, address) {
         _Employee_id.set(this, void 0);
         __classPrivateFieldSet(this, _Employee_id, id, "f");
         this.name = name;
         this.address = address;
+    }
+    login() {
+        return {
+            name: 'Caleb',
+            id: 1,
+            email: 'mbuguacaleb30@gmail.com',
+        };
     }
     //class methods
     //To create Methods in my classes i do not have to use the function Key WORD
@@ -52,9 +63,19 @@ class Employee {
 }
 _Employee_id = new WeakMap();
 //INSTANTIATE A CLASS
-let caleb = new Employee(1, 'Caleb', '553, 20117, Nvs');
+let caleb = new Employee(1, 'Caleb', {
+    street: 'kimathi',
+    city: 'Naivasha',
+    state: 'Kabati',
+    pin: '1234',
+});
 caleb.setEmpId(12345);
-let mercy = new Employee(1, 'Mercy', '553, 20117, Nvs');
+let mercy = new Employee(1, 'Mercy', {
+    street: 'kimathi',
+    city: 'Naivasha',
+    state: 'Kabati',
+    pin: '1234',
+});
 //Calling a class Method
 console.log(caleb.getNamesWithAddress());
 /**We can also assign properties manually */
@@ -73,7 +94,12 @@ class Manager extends Employee {
     }
 }
 //Bacauss the name propery is protected it cannot be accessed outside the
-let manager = new Manager(1, 'Mercy', 'Kengen');
+let manager = new Manager(1, 'Mercy', {
+    street: 'kimathi',
+    city: 'Naivasha',
+    state: 'Kabati',
+    pin: '1234',
+});
 console.log(manager.getManagerDetails());
 console.log(manager.getNamesWithAddress());
 //Static class Members

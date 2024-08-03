@@ -1,3 +1,8 @@
+import { LogIn, User } from './04_interface';
+
+//Exporting all exportable objects in a class
+// import * as UserLogIn from './04_interface';
+
 /**
  *
  * Proprties in a class are instantiated by constructors
@@ -9,15 +14,25 @@
  *
  * Protected KeyWORD is important,when extending classes functionality
  */
-class Employee {
+
+//Any class than implements the LogIn interface must have the LogIn Method
+class Employee implements LogIn {
   #id: number;
   protected name: string;
-  address: string;
+  address: Address;
 
-  constructor(id: number, name: string, address: string) {
+  constructor(id: number, name: string, address: Address) {
     this.#id = id;
     this.name = name;
     this.address = address;
+  }
+
+  login(): User {
+    return {
+      name: 'Caleb',
+      id: 1,
+      email: 'mbuguacaleb30@gmail.com',
+    };
   }
 
   //class methods
@@ -47,9 +62,20 @@ class Employee {
 }
 
 //INSTANTIATE A CLASS
-let caleb = new Employee(1, 'Caleb', '553, 20117, Nvs');
+let caleb = new Employee(1, 'Caleb', {
+  street: 'kimathi',
+  city: 'Naivasha',
+  state: 'Kabati',
+  pin: '1234',
+});
 caleb.setEmpId(12345);
-let mercy = new Employee(1, 'Mercy', '553, 20117, Nvs');
+
+let mercy = new Employee(1, 'Mercy', {
+  street: 'kimathi',
+  city: 'Naivasha',
+  state: 'Kabati',
+  pin: '1234',
+});
 
 //Calling a class Method
 console.log(caleb.getNamesWithAddress());
@@ -64,7 +90,7 @@ console.log(mercy);
 class Manager extends Employee {
   //we must use super to instantiate constructor properties of the other class
   //incase there are other methods i wish to call within it
-  constructor(id: number, name: string, address: string) {
+  constructor(id: number, name: string, address: Address) {
     super(id, name, address);
   }
 
@@ -74,7 +100,12 @@ class Manager extends Employee {
 }
 
 //Bacauss the name propery is protected it cannot be accessed outside the
-let manager = new Manager(1, 'Mercy', 'Kengen');
+let manager = new Manager(1, 'Mercy', {
+  street: 'kimathi',
+  city: 'Naivasha',
+  state: 'Kabati',
+  pin: '1234',
+});
 console.log(manager.getManagerDetails());
 console.log(manager.getNamesWithAddress());
 
@@ -83,3 +114,10 @@ console.log(Employee.getEmployeeCount());
 
 //Accessing private class properties via getters and setters
 console.log(caleb.getEmpId());
+
+interface Address {
+  street: string;
+  city: string;
+  state: string;
+  pin: string;
+}
