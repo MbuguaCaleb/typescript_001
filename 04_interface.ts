@@ -89,7 +89,7 @@ let users: User[] = [
 
 //i can get objects in array index via descructuring
 
-let [user1, user2]: User[] = [
+let [user1, user2, ...restUsers]: User[] = [
   {
     name: 'Caleb',
     id: 1,
@@ -102,14 +102,33 @@ let [user1, user2]: User[] = [
   },
   {
     name: 'Humphrey',
-    id: 3,
+    id: 32,
     email: 'mbuguacaleb30@gmail.com',
   },
   {
     name: 'Ruth',
-    id: 4,
+    id: 42,
+    email: 'mbuguacaleb30@gmail.com',
+  },
+  {
+    name: 'Mercy',
+    id: 22,
+    email: 'mbuguacaleb30@gmail.com',
+  },
+  {
+    name: 'Humphrey',
+    id: 32,
+    email: 'mbuguacaleb30@gmail.com',
+  },
+  {
+    name: 'Ruth',
+    id: 42,
     email: 'mbuguacaleb30@gmail.com',
   },
 ];
 
 console.log(user1, user2);
+console.log(restUsers);
+
+let usersGreateThanIdTwo = restUsers.filter((user) => user.id > 2);
+console.log(usersGreateThanIdTwo);
