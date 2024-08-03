@@ -99,5 +99,5 @@ let [user1, user2, ...restUsers] = [
 ];
 console.log(user1, user2);
 console.log(restUsers);
-let usersGreateThanIdTwo = restUsers.filter((user) => user.id >= 2);
+let usersGreateThanIdTwo = restUsers.filter((user) => user.id > 2);
 console.log(usersGreateThanIdTwo);
